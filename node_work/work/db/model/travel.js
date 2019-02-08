@@ -1,27 +1,27 @@
-//用户详情表
+// 游记表
 let config = require('./config');
 let Sequelize = require('sequelize');
 
-const user_detail = config.define('user_detail', {
+const travel = config.define('travel', {
     user_id: {
         type: Sequelize.STRING
     },
-    name: {
+    title: {
         type: Sequelize.STRING
     },
-    sex: {
+    content: {
         type: Sequelize.STRING
     },
-    age: {
+    date: {
         type: Sequelize.STRING
     },
-    phone: {
-        type: Sequelize.STRING
-    },
-    city: {
+    place: {
         type: Sequelize.STRING
     },
     imgurl: {
+        type: Sequelize.STRING
+    },
+    zanNum: {
         type: Sequelize.STRING
     }
 }, {
@@ -29,4 +29,4 @@ const user_detail = config.define('user_detail', {
     freezeTableName: true
 });
 
-module.exports = user_detail;
+module.exports = travel;
