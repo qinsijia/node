@@ -10,7 +10,7 @@ const sequelize = new Sequelize('travel', 'root', '', {
     max: 20,
     min: 0,
     acquire: 30000,
-    idle: 10000
+    idle: 10000 //	连接最大空置时间（毫秒），超时后将释放连接
   },
 
   // SQLite only

@@ -1,12 +1,12 @@
-// 游记表
+// 游记评论表
 let config = require('./config');
 let Sequelize = require('sequelize');
 
-const travel = config.define('travel', {
+const comment = config.define('comment', {
     user_id: {
         type: Sequelize.STRING
     },
-    title: {
+    travel_id: {
         type: Sequelize.STRING
     },
     content: {
@@ -14,22 +14,10 @@ const travel = config.define('travel', {
     },
     date: {
         type: Sequelize.STRING
-    },
-    place: {
-        type: Sequelize.STRING
-    },
-    imgurl: {
-        type: Sequelize.STRING
-    },
-    zanNum: {
-        type: Sequelize.STRING
-    },
-    state: {
-        type: Sequelize.STRING
     }
 }, {
     timestamps: false,
     freezeTableName: true
 });
 
-module.exports = travel;
+module.exports = comment;

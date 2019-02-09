@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/css/layui.css">
 </head>
+
 <body>
-    fdhs
+    <div id="test1">
+
+    </div>
 </body>
+<script src="javascripts/layui.js"></script>
+<script src="javascripts/lay/modules/laypage.js"></script>
+<script>
+    layui.use('laypage', function () {
+        var laypage = layui.laypage;
+
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+                ,
+            count: 50 //数据总数，从服务端得到
+                ,
+            jump: function (obj, first) {
+                //obj包含了当前分页的所有参数，比如：
+                console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                console.log(obj.limit); //得到每页显示的条数
+
+                //首次不执行
+                if (!first) {
+                    //do something
+                }
+            }
+        });
+    });
+</script>
+
 </html>

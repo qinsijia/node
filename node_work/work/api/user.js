@@ -1,3 +1,4 @@
+//用户的操作
 var router = require('express').Router();
 var server = require('./../server/user');
 
